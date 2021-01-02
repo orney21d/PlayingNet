@@ -1,0 +1,55 @@
+<Project>
+  <PropertyGroup Label="SDK Versions">
+    <NetTargetVersion>net5.0</NetTargetVersion>
+    <NetStandard20TargetVersion>netstandard2.0</NetStandard20TargetVersion>
+    <NetStandard21TargetVersion>netstandard2.1</NetStandard21TargetVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package Versions">
+
+    <!--To Net5.0-->
+
+    <MicrosoftAspNetCoreMvcNewtonsoftJson>5.0.0</MicrosoftAspNetCoreMvcNewtonsoftJson>
+    <MicrosoftAspNetCoreMvcVersioning>5.0.0-preview.2</MicrosoftAspNetCoreMvcVersioning>
+    <MicrosoftAspNetCoreMvcVersioningApiExplorer>5.0.0-preview.2</MicrosoftAspNetCoreMvcVersioningApiExplorer>
+    <MicrosoftAspNetCoreAuthenticationJwtBearer>5.0.0</MicrosoftAspNetCoreAuthenticationJwtBearer>
+
+    <MicrosoftExtensionsHttpPolly>5.0.0</MicrosoftExtensionsHttpPolly>
+    <MicrosoftExtensionsLoggingAbstractions>5.0.0</MicrosoftExtensionsLoggingAbstractions>
+    <MicrosoftExtensionsConfigurationFileExtensions>5.0.0</MicrosoftExtensionsConfigurationFileExtensions>
+    <MicrosoftExtensionsConfigurationJson>5.0.0</MicrosoftExtensionsConfigurationJson>
+    <MicrosoftExtensionsConfigurationEnvironmentVariable>5.0.0</MicrosoftExtensionsConfigurationEnvironmentVariable>
+    <MicrosoftExtensionsConfigurationBinder>5.0.0</MicrosoftExtensionsConfigurationBinder>
+    <MicrosoftExtensionsHostingAbstractions>5.0.0</MicrosoftExtensionsHostingAbstractions>
+    <MicrosoftExtensionsOptions>5.0.0</MicrosoftExtensionsOptions>
+    <MicrosoftExtensionsOptionsConfigurationExtensions>5.0.0</MicrosoftExtensionsOptionsConfigurationExtensions>
+    <MicrosoftExtensionsHosting>5.0.0</MicrosoftExtensionsHosting>
+    <MicrosoftExtensionsDependencyInjectionAbstractions>5.0.0</MicrosoftExtensionsDependencyInjectionAbstractions>
+    <MicrosoftExtensionsConfigurationAbstractions>5.0.0</MicrosoftExtensionsConfigurationAbstractions>
+    
+    <!--To Net5.0-->
+    
+    <MicrosoftOpenApiReaders>1.2.2</MicrosoftOpenApiReaders>
+   
+    <SystemServiceModelHttp>4.7.0</SystemServiceModelHttp>
+    <MicrosoftVisualStudioWebCodeGenerationDesign>5.0.0</MicrosoftVisualStudioWebCodeGenerationDesign>
+    <FluentValidationAspNetCore>9.3.0</FluentValidationAspNetCore>
+    <FluentValidation>9.3.0</FluentValidation>
+
+    <SwashbuckleAspNetCore>4.0.1</SwashbuckleAspNetCore>
+   
+  </PropertyGroup>
+
+  <PropertyGroup Label="Tools Versions">
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Test Package Versions">
+    <MicrosoftNETTestSdk>16.8.0</MicrosoftNETTestSdk>
+    <Moq>4.15.2</Moq>
+    <xunit>2.4.1</xunit>
+    <xunitrunnervisualstudio>2.4.3</xunitrunnervisualstudio>
+    <coverletcollector>1.3.0</coverletcollector>
+    <coverletmsbuild>2.9.0</coverletmsbuild>
+  </PropertyGroup>
+
+</Project>

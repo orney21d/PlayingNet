@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{59FE1523-8A7A-4D97-AB88-441B43BA6DCD}"
+	ProjectSection(SolutionItems) = preProject
+		Build\dependencies.props = Build\dependencies.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5CEB6E72-1EAA-4AF9-9375-1494DFDF685E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{025EAC71-7E9F-4E03-BE6A-1F07232CF66C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC851B2A-F6BA-4FD6-A6DE-22CAE18A3470}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QI.WikiScraping.Host", "Src\QI.WikiScraping.Host\QI.WikiScraping.Host.csproj", "{5DEF5289-88CF-4682-A9DE-42C742C20475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QI.WikiScraping.Api", "Src\QI.WikiScraping.Api\QI.WikiScraping.Api.csproj", "{2362F650-44DB-4623-A9EA-351B4FA8C509}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QI.WikiScraping.Api.Tests", "Tests\QI.WikiScraping.Api.Tests\QI.WikiScraping.Api.Tests.csproj", "{29C29592-34B9-4F67-B247-F5B18ECD4E5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DEF5289-88CF-4682-A9DE-42C742C20475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEF5289-88CF-4682-A9DE-42C742C20475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEF5289-88CF-4682-A9DE-42C742C20475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEF5289-88CF-4682-A9DE-42C742C20475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2362F650-44DB-4623-A9EA-351B4FA8C509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2362F650-44DB-4623-A9EA-351B4FA8C509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2362F650-44DB-4623-A9EA-351B4FA8C509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2362F650-44DB-4623-A9EA-351B4FA8C509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C29592-34B9-4F67-B247-F5B18ECD4E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C29592-34B9-4F67-B247-F5B18ECD4E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C29592-34B9-4F67-B247-F5B18ECD4E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C29592-34B9-4F67-B247-F5B18ECD4E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DEF5289-88CF-4682-A9DE-42C742C20475} = {5CEB6E72-1EAA-4AF9-9375-1494DFDF685E}
+		{2362F650-44DB-4623-A9EA-351B4FA8C509} = {5CEB6E72-1EAA-4AF9-9375-1494DFDF685E}
+		{29C29592-34B9-4F67-B247-F5B18ECD4E5F} = {025EAC71-7E9F-4E03-BE6A-1F07232CF66C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74EC60CD-DEF3-4540-94CF-EBA208836FF8}
+	EndGlobalSection
+EndGlobal
