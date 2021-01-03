@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -40,29 +41,26 @@ namespace QI.WikiScraping.Host
 
             //Using separation of conserns by solution architecture. This is good for instance for isolate Unit Tests, etc.
 
-            ApiConfiguration.ConfigureServices(services, Configuration, Env);
+            ApiStartupConfiguration.ConfigureServices(services, Configuration, Env);
 
             #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //Here we can call the middleware for authentication, that way we give to the host the responsability to register
+            //Auth stuff.
 
-            app.UseHttpsRedirection();
+            ApiStartupConfiguration.Configure(
+                app,
+                host => host
+                .UseIf(env.IsDevelopment(), appBuilder => appBuilder.UseDeveloperExceptionPage()),
+                env,
+                apiVersionDescriptionProvider,
+                Configuration
+            );
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
         }
     }
 }

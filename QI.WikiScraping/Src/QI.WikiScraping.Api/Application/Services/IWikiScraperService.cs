@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace QI.WikiScraping.Api.Services
+namespace QI.WikiScraping.Api.Application.Services
 {
     /// <summary>
     /// Define the contract for the scraping's service related to Wiki

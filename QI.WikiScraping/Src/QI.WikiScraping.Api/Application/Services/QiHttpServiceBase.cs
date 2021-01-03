@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using QI.WikiScraping.Api.Infrastructure;
 
-namespace QI.WikiScraping.Api.Services
+namespace QI.WikiScraping.Api.Application.Services
 {
     //This can be defined in a Nuget package to be used accross projects
 

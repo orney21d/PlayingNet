@@ -37,6 +37,9 @@
     <FluentValidation>9.3.0</FluentValidation>
 
     <SwashbuckleAspNetCore>4.0.1</SwashbuckleAspNetCore>
+    <SwashbuckleAspNetCoreFilters>5.0.2</SwashbuckleAspNetCoreFilters>
+    <SwashbuckleAspNetCoreSwaggerGen>5.2.1</SwashbuckleAspNetCoreSwaggerGen>
+    <MicrosoftOpenApi>1.2.3</MicrosoftOpenApi>
    
   </PropertyGroup>
 

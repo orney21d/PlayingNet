@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>$(NetTargetVersion)</TargetFramework>
+    <Description>Qual Id Orney's test description</Description>
+    <Product>QualId Wiki Scraping</Product>
+    <Company>Qual Id</Company>
+    <Authors>Orney Martinez</Authors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\V1\" />
-  </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -19,6 +19,9 @@
     
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtensionsConfigurationAbstractions)" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtensionsDependencyInjectionAbstractions)" />
+    <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApi)" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="$(SwashbuckleAspNetCoreFilters)" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="$(SwashbuckleAspNetCoreSwaggerGen)" />
   </ItemGroup>
 
 </Project>

@@ -15,5 +15,10 @@ namespace QI.WikiScraping.Api.Infrastructure.ConfigSettings
         /// Logging
         /// </summary>
         public const string Logging = "Logging";
+
+        /// <summary>
+        /// Swagger section config values
+        /// </summary>
+        public const string Swagger = "Swagger";
     }
 }

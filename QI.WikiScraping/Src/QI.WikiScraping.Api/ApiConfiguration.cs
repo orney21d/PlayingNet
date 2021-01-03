@@ -9,20 +9,22 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using QI.WikiScraping.Api.Infrastructure.Filters;
+using Microsoft.Extensions.Hosting;
+using QI.WikiScraping.Api.Infrastructure.ConfigSettings;
 
 namespace QI.WikiScraping.Api
 {
     /// <summary>
     /// Define the registration process WebApi's related
     /// </summary>
-    public class ApiConfiguration
+    public class ApiStartupConfiguration
     {
 
         public static IServiceCollection ConfigureServices(IServiceCollection services, IConfiguration configuration, IWebHostEnvironment env)
         {
             services.AddControllers().AddNewtonsoftJson(); //Better to use TextJson for performance improvements but for the QI test this is ok.
-            services.AddQiHealthChecks()
-                .AddQiConfigDependencies(configuration); //Adding the configuration binding dependencies we could have
+            services.AddHealthChecksQi()
+                .AddConfigDependenciesQi(configuration); //Adding the configuration binding dependencies we could have
 
 
             #region Http Client Factory
@@ -32,9 +34,14 @@ namespace QI.WikiScraping.Api
             #endregion
 
 
-           
+            services.AddMvcCoreDependenciesQi();
 
 
+            #region OpenApi-Swagger / Versioning
+
+            services.AddSwaggerVersioningApiQi<ApiStartupConfiguration>(configuration);
+
+            #endregion
 
             return services;
         }
@@ -43,15 +50,40 @@ namespace QI.WikiScraping.Api
             IApplicationBuilder app,
             Func<IApplicationBuilder, IApplicationBuilder> configureHost,
             IWebHostEnvironment env,
-             IApiVersionDescriptionProvider apiVersionDescriptionProvider
+             IApiVersionDescriptionProvider apiVersionDescriptionProvider,
+             IConfiguration configuration
             )
         {
 
 
 
-            return configureHost(app)
-                .UseRouting();   
-                
+            IApplicationBuilder appBuilder = configureHost(app)
+                .UseQiHealthChecks();
+
+            if (!env.IsDevelopment())
+            {
+                appBuilder.UseExceptionHandler("/Error");
+                appBuilder.UseHsts();
+                appBuilder.UseHttpsRedirection();
+            }
+
+            #region Swagger middlewares
+             
+            appBuilder.UseOpenApiSwashbuckleQi(configuration, apiVersionDescriptionProvider);
+
+            #endregion
+
+            appBuilder.UseRouting();
+
+
+
+
+            return appBuilder.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
+            });
+
         }
     }
 }
