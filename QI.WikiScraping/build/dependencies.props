@@ -7,7 +7,7 @@
 
   <PropertyGroup Label="Package Versions">
 
-    <!--To Net5.0-->
+    
 
     <MicrosoftAspNetCoreMvcNewtonsoftJson>5.0.0</MicrosoftAspNetCoreMvcNewtonsoftJson>
     <MicrosoftAspNetCoreMvcVersioning>5.0.0-preview.2</MicrosoftAspNetCoreMvcVersioning>
@@ -27,7 +27,7 @@
     <MicrosoftExtensionsDependencyInjectionAbstractions>5.0.0</MicrosoftExtensionsDependencyInjectionAbstractions>
     <MicrosoftExtensionsConfigurationAbstractions>5.0.0</MicrosoftExtensionsConfigurationAbstractions>
     
-    <!--To Net5.0-->
+    
     
     <MicrosoftOpenApiReaders>1.2.2</MicrosoftOpenApiReaders>
    
@@ -40,7 +40,7 @@
     <SwashbuckleAspNetCoreFilters>5.0.2</SwashbuckleAspNetCoreFilters>
     <SwashbuckleAspNetCoreSwaggerGen>5.2.1</SwashbuckleAspNetCoreSwaggerGen>
     <MicrosoftOpenApi>1.2.3</MicrosoftOpenApi>
-   
+    <AngleSharp>0.14.0</AngleSharp>
   </PropertyGroup>
 
   <PropertyGroup Label="Tools Versions">

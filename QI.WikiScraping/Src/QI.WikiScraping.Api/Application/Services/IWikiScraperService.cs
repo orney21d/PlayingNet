@@ -12,6 +12,6 @@ namespace QI.WikiScraping.Api.Application.Services
     /// </summary>
     public interface IWikiScraperService
     {
-        Task<dynamic> GetContentFromArticle(string url, CancellationToken cancellationToken);
+        Task<int> GetContentFromArticle(string url, CancellationToken cancellationToken);
     }
 }

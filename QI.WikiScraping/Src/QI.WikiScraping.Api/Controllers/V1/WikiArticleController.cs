@@ -43,7 +43,18 @@ namespace QI.WikiScraping.Api.Controllers.V1
         [ProducesResponseType(StatusCodes.Status200OK)]
         public  async Task<ActionResult> DifferentWords(string wikiArticleUrl, CancellationToken cancellationToken)
         {
-            return Ok( new { words= 5 });
+            _logger.LogInformation($"Ini--{nameof(WikiArticleController)}.{nameof(DifferentWords)} for Url: '{wikiArticleUrl}'");
+
+
+            //Validate the Url from Wikipedia at this point
+
+            var response = await _wikiScraperService.GetContentFromArticle(wikiArticleUrl, cancellationToken);
+
+
+            _logger.LogInformation($"End--{nameof(WikiArticleController)}.{nameof(DifferentWords)} for Url: '{wikiArticleUrl}'");
+
+
+            return Ok($"The article has the number of different words: '{response}'");
         }
     }
 }

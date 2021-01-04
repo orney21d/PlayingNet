@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using QI.WikiScraping.Api.Infrastructure;
+using QI.WikiScraping.Api.Infrastructure.Utils.Validators;
 
 namespace QI.WikiScraping.Api.Application.Services
 {
@@ -29,6 +30,7 @@ namespace QI.WikiScraping.Api.Application.Services
         /// <param name="logger"></param>
         public QiHttpServiceBase(ILogger<QiHttpServiceBase> logger)
         {
+            QiArg.NotNull(logger, nameof(logger));
             _logger = logger;
         }
 
@@ -47,5 +49,18 @@ namespace QI.WikiScraping.Api.Application.Services
             throw new RethrowApiException(httpResponseMessage);
         }
 
+        /// <summary>
+        /// Handle the response as string
+        /// </summary>
+        /// <param name="httpResponseMessage"></param>
+        /// <returns></returns>
+        protected async Task<string> HandleResponseAsString(HttpResponseMessage httpResponseMessage)
+        {
+            if (httpResponseMessage.IsSuccessStatusCode)
+                return await httpResponseMessage.Content.ReadAsStringAsync();
+
+            _logger.LogError($"Call to service returned {httpResponseMessage.StatusCode}");
+            throw new RethrowApiException(httpResponseMessage);
+        }
     }
 }
